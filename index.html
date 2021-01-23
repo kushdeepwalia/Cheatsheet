@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheatSheet</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prism.css">
-    <script src="prism.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Potta+One&display=swap" rel="stylesheet">
 </head>
@@ -25,56 +25,8 @@
     </nav>
     <section id="html-section" class="section-active">
         <div class="container">
-            <ol>
-                <br>
-                <li>
-                    <span class="heading">HTML Boilerplate</span>
-                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                </li>
-                <br>
-                <li>
-                    <span class="heading">Header</span>
-                    <pre><code class="language-html">&lt;!-- Header Begins --&gt;
-&lt;section id="homeSec"&gt;
-    &lt;header class="header" id="home" style="justify-content: flex-end;"&gt;
-        &lt;img src="" alt="" id="myPic" style="display: none;" /&gt;
-        &lt;nav class="nav"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a id="homeBtn"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a id="aboutBtn"&gt;About&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a id="skillsBtn"&gt;Skills&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a id="projectBtn"&gt;Projects&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a id="contactBtn"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/nav&gt;
-        &lt;div class="hamicon" id="hamicon"&gt;
-            &lt;div class="icon-line"&gt;&lt;/div&gt;
-            &lt;div class="icon-line"&gt;&lt;/div&gt;
-            &lt;div class="icon-line"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/header&gt;
-    &lt;nav class="nav" id="nav"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a id="homeBtn2"&gt;Home&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a id="aboutBtn2"&gt;About&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a id="skillsBtn2"&gt;Skills&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a id="projectBtn2"&gt;Projects&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a id="contactBtn2"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-&lt;/section&gt;
-&lt;!-- Header Ends --&gt;</code></pre>
-                </li>
+            <ol id="htmlContent">
+                
             </ol>
         </div>
     </section>
@@ -312,9 +264,15 @@ hamicon.addEventListener('click', () => {
                     <span class="heading">PHP</span>
                     <pre><code class="language-php"></code></pre>
                 </li>
+                <li>
+                    <pre><code class="language-css"><pre id="what">text</pre> { color: blue; }
+                    </code></pre>
+                </li>
+                
             </ol>
         </div>
     </section>
     <script src="script.js"></script>
+    <script async defer src="prism.js"></script>
 </body>
 </html>

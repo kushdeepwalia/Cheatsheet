@@ -98,6 +98,11 @@ div.code-toolbar > .toolbar button{
     color: hsl(76, 21%, 52%) !important;
 }
 
+pre[class*="language-"] {
+    max-height: 400px;
+    
+}
+
 @media screen and (max-width: 425px){
     .content{
         font-size: 20px;
@@ -112,3 +117,4 @@ div.code-toolbar > .toolbar button{
         font-size: 15px;
     }
 }
+
