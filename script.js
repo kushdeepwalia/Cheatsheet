@@ -26,9 +26,7 @@ fetch("https://spreadsheets.google.com/feeds/list/1bHRdk1vAp_Q5_8moWbrlUJHb48pXs
 .then((data)=>{
     const htmlContent = document.getElementById("htmlContent");
     var totalCodes = data["feed"]["entry"].length;
-
     var code = data["feed"]["entry"];
-    // console.log(code);
     let htmlCode = "";
     for(let i=0;i<totalCodes;i++)
     {
@@ -36,7 +34,7 @@ fetch("https://spreadsheets.google.com/feeds/list/1bHRdk1vAp_Q5_8moWbrlUJHb48pXs
         {
             htmlCode+=`<li>
             <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
-            <pre class="language-html">
+            <pre>
                 <code class="language-html" id="test${i+1}">&lt;p&gt;&lt;/p&gt;</code>
             </pre>
         </li>`
@@ -51,6 +49,11 @@ fetch("https://spreadsheets.google.com/feeds/list/1bHRdk1vAp_Q5_8moWbrlUJHb48pXs
             document.getElementById("test"+j).textContent=code[i]["gsx$code"]["$t"];
         }
     }
+})
+.then(() => {
+    let script = document.createElement('script');
+    script.src = "prism.js";
+    document.body.append(script);
 });
 
 
