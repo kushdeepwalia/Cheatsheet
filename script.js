@@ -20,3 +20,41 @@ listItems.forEach(element => {
         toggleSection.classList.add("section-active");
     })
 });
+
+fetch("https://spreadsheets.google.com/feeds/list/1bHRdk1vAp_Q5_8moWbrlUJHb48pXsmprwXnw33Iy2B8/1/public/full?alt=json")
+.then((res)=>res.json())
+.then((data)=>{
+    const htmlContent = document.getElementById("htmlContent");
+    var totalCodes = data["feed"]["entry"].length;
+
+    var code = data["feed"]["entry"];
+    // console.log(code);
+    let htmlCode = "";
+    for(let i=0;i<totalCodes;i++)
+    {
+        if(code[i]["gsx$language"]["$t"]==="HTML")
+        {
+            htmlCode+=`<li>
+            <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
+            <pre class="language-html">
+                <code class="language-html" id="test${i+1}">&lt;p&gt;&lt;/p&gt;</code>
+            </pre>
+        </li>`
+        }
+    }
+    htmlContent.innerHTML=htmlCode;
+    for(let i=0;i<totalCodes;i++)
+    {
+        if(code[i]["gsx$language"]["$t"]==="HTML")
+        {
+            let j = i+1;
+            document.getElementById("test"+j).textContent=code[i]["gsx$code"]["$t"];
+        }
+    }
+});
+
+
+
+
+
+
