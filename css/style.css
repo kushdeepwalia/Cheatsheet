@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+}
+
+.logo img{
+    width: 40px;
+}
+
+.content{
+    font-size: 30px;
+    font-family: 'Potta One', cursive;
+}
+
+nav{
+    height: 9vh;
+    background: radial-gradient(white, rgb(182, 178, 178));
+}
+
+nav ul{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+ul li{
+    cursor: pointer;
+    list-style-type: none;  
+    height: 5vh;
+    margin: 0 10px;
+    margin-top: 1px;
+    box-shadow: 0 0 10px grey;
+    padding: 10px 20px;
+    background: linear-gradient(white, rgb(182, 178, 178));
+    font-size: 23px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.li-active{
+    padding-top: 8px;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+ul li:hover:not(.li-active){
+    background: linear-gradient(rgb(182, 178, 178),white);
+    box-shadow: 0 0 10px white;
+}
+
+.section-active{
+    display: block;
+}
+
+section{
+    display: none;
+}
+
+.container{
+    width: 80vw;
+    margin: auto;
+}
+
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ol li{
+    font-weight: 600;
+}
+
+div.code-toolbar > .toolbar button{
+    background-color: white !important;
+    color: black !important;
+    margin-right: 10px !important;
+    margin-top: 5px !important;
+    padding: 5px 10px !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+}
+
+.attr-value{
+    color: aqua !important;
+}
+
+.punctuation{
+    color: hsl(76, 21%, 52%) !important;
+}
+
+pre[class*="language-"] {
+    max-height: 400px;
+    
+}
+footer{
+    margin-bottom:50px;
+}
+
+@media screen and (max-width: 425px){
+    .content{
+        font-size: 1.125rem;
+    }
+    ul li{
+        padding: 6px 9px;
+        font-size: 1.125rem;
+    }
+    .li-active{
+        font-size: 1.125rem;
+    }
+    .container{
+        width: 80vw;
+    }
+    ol li{
+        font-size: 15px;
+    }
+}
+
