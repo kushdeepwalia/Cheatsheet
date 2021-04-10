@@ -67,7 +67,7 @@ section{
 }
 
 .container{
-    width: 50vw;
+    width: 80vw;
     margin: auto;
 }
 
@@ -102,13 +102,20 @@ pre[class*="language-"] {
     max-height: 400px;
     
 }
+footer{
+    margin-bottom:50px;
+}
 
 @media screen and (max-width: 425px){
     .content{
-        font-size: 20px;
+        font-size: 1.125rem;
     }
     ul li{
         padding: 6px 9px;
+        font-size: 1.125rem;
+    }
+    .li-active{
+        font-size: 1.125rem;
     }
     .container{
         width: 80vw;
