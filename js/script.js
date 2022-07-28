@@ -20,7 +20,7 @@ listItems.forEach(element => {
         toggleSection.classList.add("section-active");
     })
 });
-var api = "https://spreadsheets.google.com/feeds/list/1iAZRBOzGeX7pbxLKEVtl9or_eCXYwwXCuF-sONU3BWM/1/public/full?alt=json"
+var api = "https://sheets.googleapis.com/v4/spreadsheets/1iAZRBOzGeX7pbxLKEVtl9or_eCXYwwXCuF-sONU3BWM/values:batchGet?ranges=A2:U133&key=AIzaSyATGC19rqvjo4HJs8uMHFoittxEeoNViPs"
 // var api = "https://spreadsheets.google.com/feeds/list/1bHRdk1vAp_Q5_8moWbrlUJHb48pXsmprwXnw33Iy2B8/1/public/full?alt=json"
 fetch(api)
 .then((res)=>res.json())
@@ -29,16 +29,16 @@ fetch(api)
     const cssContent = document.getElementById("cssContent");
     const jsContent = document.getElementById("jsContent");
     const phpContent = document.getElementById("phpContent");
-    var totalCodes = data["feed"]["entry"].length;
+    var totalCodes = data.valueRanges[0].values.length;
 
-    var code = data["feed"]["entry"];
-    // console.log(code);
+    var code = data.valueRanges[0].values;
+    console.log(code);
     // let cheatCode = "";
     for(let i=0;i<totalCodes;i++)
     {
         let cheatCode = "";
         let j= i+1;
-        if(code[i]["gsx$language"]["$t"]==="HTML")
+        if(code[i][1]==="HTML")
         {
             cheatCode+=`<br><li>
             <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
@@ -50,7 +50,7 @@ fetch(api)
             let text = document.getElementById("htmlText"+j);
             text.textContent+=code[i]["gsx$code"]["$t"];
         }
-        else if(code[i]["gsx$language"]["$t"]==="CSS")
+        else if(code[i][1]==="CSS")
         {
             cheatCode+=`<br><li>
             <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
@@ -62,7 +62,7 @@ fetch(api)
             let text = document.getElementById("cssText"+j);
             text.textContent+=code[i]["gsx$code"]["$t"];
         }
-        else if(code[i]["gsx$language"]["$t"]==="JavaScript")
+        else if(code[i][1]==="JavaScript")
         {
             cheatCode+=`<br><li>
             <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
@@ -74,7 +74,7 @@ fetch(api)
             let text = document.getElementById("jsText"+j);
             text.textContent+=code[i]["gsx$code"]["$t"];
         }
-        else if(code[i]["gsx$language"]["$t"]==="PHP")
+        else if(code[i][1]==="PHP")
         {
             cheatCode+=`<br><li>
             <span class="heading">${code[i]["gsx$heading"]["$t"]}</span>
